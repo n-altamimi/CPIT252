@@ -12,6 +12,7 @@ public class CheckingAccount extends Account {
             view.showMessage("Insufficient funds. Please enter an amount less than or equal to your balance.");
         } else {
             balance -= amount;
+            notifyObservers();
             view.showMessage("Withdrawal of $" + amount + " successful!");
         }
     }

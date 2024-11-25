@@ -19,6 +19,7 @@ public class SavingsAccount extends Account {
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
+            notifyObservers();
             System.out.println("Withdrew $" + amount + " from Savings Account.");
         } else {
             System.out.println("Insufficient funds in Savings Account!");
